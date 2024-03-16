@@ -1,4 +1,4 @@
-# neon 配置文件
+# neon-ml 配置文件
 
 ```
 "Object1" = "obj-1";
