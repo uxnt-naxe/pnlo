@@ -1,4 +1,7 @@
-# neon-ml 配置文件
+# NeonWave - Language 配置文件
+
+
+
 
 ```
 "Object1" = "obj-1";
