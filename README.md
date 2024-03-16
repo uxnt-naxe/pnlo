@@ -1,4 +1,5 @@
-# NeonWave - Language 配置文件
+# Purple Neon Light - Object 配置文件
+pnlo (Purple Neon Light Object)
 
 
 
