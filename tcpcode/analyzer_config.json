@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "models": [
+    {
+      "name": "情感模型",
+      "description": "根据输入文本的情感色彩进行判断",
+      "path": "models/emotion_model.pt",
+      "vocab": "models/vocab.txt"
+    },
+    {
+      "name": "关键词提取模型",
+      "description": "从输入文本中提取主要关键词",
+      "path": "models/keywords_model.pt",
+      "vocab": "models/vocab.txt"
+    }
+  ],
+  "stopwords": [
+    "的",
+    "了",
+    "是",
+    "我",
+    "你",
+    "他"
+  ]
+}

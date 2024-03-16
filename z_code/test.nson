@@ -1,0 +1,38 @@
+// Windows 11, 2023-10-21 
+// Computer Window Title
+// Title :   | ■ Hello World!              [-][口][x]|
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |				  [Run!]				 |
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |_______________________________________|
+
+"windows.text" = "Hello World!";
+"windows.w" = "auto";
+"windows.h" = "auto";
+"button.text" ="Run!";
+"button.x" = "auto";
+// css xml
+"button.y" = "auto";
+
+maoe = "horpa";
+
+
+/*
+
+[windows]
+    text = "Hello World!";
+    w = "auto";
+    h = "auto";
+    [button]
+        text = "Run!";
+        x = "auto";
+    ~
+~
+
+*/

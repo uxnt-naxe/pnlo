@@ -1,0 +1,42 @@
+// Windows 11, 2023-10-21 
+// Computer Window Title
+// Title :   | ■ Hello World!              [-][口][x]|
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |				  [Run!]				 |
+//			 |										 |
+//			 |										 |
+//			 |										 |
+//			 |_______________________________________|
+
+
+"winXP" = "Rest";
+Gokoe = "2024-3-16";
+
+[]
+    "Kioe" = "Rest";
+    Tenox = "2024-3-16";
+~
+
+[Nopr]
+    App = 2007;
+    Nson = 2506;
+    "Maro" = 19;
+    Tawer_ = "qwrr r";
+    [Test]
+        Nop = 1;
+        Ropt = 2;
+    ~
+~
+
+        Taw_er = 3.14;
+        "windows.text" = "Hello World!";
+            "windows.w" = 1;
+            "windows.h" = 1;
+                "button.text" = "Run!"; 
+                    "button.x" = 2;
+                    "button.y" = 2;
+                    // css xml

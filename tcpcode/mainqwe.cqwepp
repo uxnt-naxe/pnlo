@@ -1,0 +1,39 @@
+// Tiny-C-Plus, main.cpp
+// 2023-10-15 <22:47>
+// 豆焰 <beanflame>
+
+#include <iostream>
+#include "OtneFile.h"
+#include "lexer.h"
+#include "Utf8.h"
+
+using namespace std;
+
+
+int main(int argc, char *argv[])
+{
+    // UTF-8
+    setlocale(LC_ALL, "");
+    ios_base::sync_with_stdio(false);
+
+    wcout << L"Tiny CJson v0.1.0" << std::endl;
+    // Read Code
+    i18nString code = ReadFile("main.tcp");
+    std::wcout << std::endl;
+    std::wcout << code << std::endl;
+    std::wcout << std::endl;
+
+    // Lexer
+    std::wcout << L"[- Lexer -]" << std::endl;
+    lexer(code);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
