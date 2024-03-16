@@ -1,5 +1,5 @@
-# Purple Neon Light - Object 配置文件
-## pnlo (Purple Neon Light Object)
+# Pnlo (Purple Neon Light Object) 配置文件
+## PNLO v0.0.1
 
 ## 代码语法
 ```kt
