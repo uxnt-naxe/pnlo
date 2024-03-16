@@ -4,16 +4,10 @@
 // NSON Maoep = paser();
 
 
-class NSON {
-
-
+class pnlo {
 
     public:
-        NSON(const std::string& text) {
+        pnlo(const std::string& text) {
 
         }
-        
-    
-        
-
 };

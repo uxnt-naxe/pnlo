@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 set(CMAKE_CXX_STANDARD 17)
 
-# project ("nson")
-project(NSON)
+project("pnlo")
 
 # C++17 - 32bit static libgcc
 set(CMAKE_CXX_STANDARD 17)

@@ -10,7 +10,7 @@
 
 int main() {
 
-    Neon::File ojb = Neon::File("text.neon");
+    Neon::File ojb = Neon::File("text.pnlo");
 
     std::string input = ojb.Read();
 

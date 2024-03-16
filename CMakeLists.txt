@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.19)
 #project(NSON)
 #add_subdirectory ("src/cpp")
 
-project ("nson")
-add_subdirectory ("nson/cpp")
+project ("pnlo")
+add_subdirectory ("pnlo/cpp")
 
 
 # MSVC utf-8
