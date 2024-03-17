@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.19)
 #project(NSON)
 #add_subdirectory ("src/cpp")
 
-project ("pnlo")
+project ("main")
 add_subdirectory ("pnlo/cpp")
 
 

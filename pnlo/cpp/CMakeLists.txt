@@ -28,4 +28,7 @@ file(GLOB SRCS
 	"./*"
 )
 
-add_executable(NSON ${SRCS})
+# set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/${IDE_BIN_DIR})
+set(EXECUTABLE_OUTPUT_PATH "../../../")
+
+add_executable("pnlo" ${SRCS})
