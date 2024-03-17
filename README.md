@@ -1,5 +1,6 @@
-# Pnlo 0.0.1 (Purple Neon Light Object) 配置文件
-Pnlo代码语法简化比较好，再用这样行吧。支持压缩代码、更多嵌套。
+# Pnlo 0.0.1 (Purple Neon Light Object) 
+
+Pnlo配置文件代码语法简化比较好，再用这样行吧。支持压缩代码、更多嵌套。
 
 ## 代码语法
 ```kt
