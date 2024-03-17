@@ -6,21 +6,20 @@
 //    \/_/     \/_/ \/_/   \/_____/   \/_____/ 
 //                                  
 // Pnlo This is a comment, patorjk Sub-Zero
-"Pnlo" = "NeonScript Object";
+"Pnlo" = "Purple Neon Light Object";
+"version" = "1.0";
 
+Object1 = "obj-1";
+Object2 = "obj-2";
 
-    "version": "1.0"
-    Object1: "obj-1"
-    Object2: "obj-2"
-    "Object3": "obj-3"
-    "Object4": "obj-4"
-    main_obj_: "Main Obj"
+"Object3" = "obj-3";
+"Object4" = "obj-4";
 
-
-
+main_obj_ = "Main Obj";
 Time = 2207;
 OFF = false;
 ON = true;
+
 // [obj]
 //    yes = true;
 // ~

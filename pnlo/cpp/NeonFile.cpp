@@ -16,13 +16,15 @@
 
 namespace Neon
 {
-    File::File(/* args */) {
-        // NeonPlus-this->path = path; 
+    File::File(/* args */)
+    {
+        // NeonPlus-this->path = path;
     }
 
-    File::~File() {
+    File::~File()
+    {
     }
-    
+
     File::File(std::string path)
     {
         this->path = path;
@@ -38,7 +40,7 @@ namespace Neon
             File.close();
             return this->path + " " + "File Open Error!\n";
         }
-        //将rdbuf返回的缓冲区转换成string
+        // 将rdbuf返回的缓冲区转换成string
         std::stringstream buffer;
         buffer << File.rdbuf();
         File.close();
@@ -54,21 +56,23 @@ namespace Neon
             File.close();
             return this->path + " " + "File Open Error!\n";
         }
-        //将rdbuf返回的缓冲区转换成string
+        // 将rdbuf返回的缓冲区转换成string
         std::stringstream buffer;
         buffer << File.rdbuf();
         File.close();
         return buffer.str();
     }
 
-    void File::Write(std::string path, std::string buffer) {
+    void File::Write(std::string path, std::string buffer)
+    {
         this->path = path;
         std::fstream ouf(this->path, std::ios_base::out | std::ios_base::binary);
         ouf.write(buffer.data(), strlen(buffer.data()));
         ouf.close();
     }
 
-    void File::Write(std::string buffer) {
+    void File::Write(std::string buffer)
+    {
         std::fstream ouf(this->path, std::ios_base::out | std::ios_base::binary);
         ouf.write(buffer.data(), strlen(buffer.data()));
         ouf.close();
