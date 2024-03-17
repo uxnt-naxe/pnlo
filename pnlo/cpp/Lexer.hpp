@@ -32,13 +32,13 @@ bool isDigit(char str) {
     return false;
 }
 
-bool isApha(char str) {
+bool isAlpha(char str) {
     if ((str >= 'A' && str <= 'Z') || (str >= 'a' && str <= 'z')) { return true; }
     return false;
 }
 
 bool isLetter(char str) {
-    if (isApha(str) || isDigit(str) || str == '_') { return true; }
+    if (isAlpha(str) || isDigit(str) || str == '_') { return true; }
     return false;
 }
 
