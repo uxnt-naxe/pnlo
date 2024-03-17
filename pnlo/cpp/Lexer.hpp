@@ -149,6 +149,7 @@ public:
             }
 
             if (currentChar() == '/') {
+
                 advance();
                 if (currentChar() == '/') {
                     advance();
@@ -157,11 +158,22 @@ public:
                         advance();
                     }
                     continue; // 继续解析下一个Token
-                } else {
+                }
+                
+                
+                else {
                     std::cerr << "Error: Invalid Character" << std::endl;
                     exit(1);
                 }
             }
+
+            
+
+
+
+
+
+
 
             switch (currentChar()) {
                 case '=':

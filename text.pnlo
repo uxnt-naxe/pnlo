@@ -16,10 +16,11 @@ Object2 = "obj-2";
 "Object4" = "obj-4";
 
 main_obj_ = "Main Obj";
-Time = 2207.0;
+Time = 2207;
 OFF = false;
 ON = true;
 
 // [obj]
 //    yes = true;
 // ~
+

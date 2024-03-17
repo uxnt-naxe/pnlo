@@ -6,6 +6,7 @@
 
 class Parse
 {
+    
 };
 
 std::map<std::string, Token> paser(std::vector<Token> tokenList)
