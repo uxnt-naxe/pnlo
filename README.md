@@ -9,7 +9,11 @@
 Object2 = "obj-2";
 Object4 = "obj-4";
 
-Treo_ = 2207;
+Time = 2207;
+
+OFF = false;
+ON = true;
+
 ```
 
 ## 注释风格完全一致
@@ -18,7 +22,7 @@ Treo_ = 2207;
 ```
 
 ### 对象定义
-```
+```kt
 // 一般形式:
 [obj]
    top = 90;
