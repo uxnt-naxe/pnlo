@@ -18,8 +18,8 @@ Pnlo配置文件代码语法简化比较好，再用这样行吧。支持压缩�
 //    \/_/     \/_/ \/_/   \/_____/   \/_____/ 
 //                                
 // Pnlo This is a comment, patorjk Sub-Zero
-"NSO" = "NeonScript Object";
-"version" = "1.0";
+"PNLO" = "PurpleNeonLight Object";
+"version" = "0.0.1";
 
 Object1 = "obj-1";
 Object2 = "obj-2";
