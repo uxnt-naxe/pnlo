@@ -5,7 +5,6 @@
 
 namespace Neon
 {
-
     class File
     {
     private:
@@ -23,5 +22,4 @@ namespace Neon
         void Write(std::string buffer);
 
     };
-
 }

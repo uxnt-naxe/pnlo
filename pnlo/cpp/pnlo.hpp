@@ -1,13 +1,18 @@
 #include "Lexer.hpp"
-#include "Paser.hpp"
-
-// NSON Maoep = paser();
-
+#include "Parse.hpp"
 
 class pnlo {
 
-    public:
-        pnlo(const std::string& text) {
+    
 
+    public:
+        std::string str = "";
+
+        pnlo(const std::string& str) {
+            
+        }
+        pnlo pnlo::parse(const std::string& str) {
+            
+            
         }
 };
