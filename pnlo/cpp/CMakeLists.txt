@@ -24,15 +24,6 @@ add_compile_options("$<$<CXX_COMPILER_ID:GNU>:-fexec-charset=GBK>")
 add_compile_options("$<$<C_COMPILER_ID:GNU>:-finput-charset=utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:GNU>:-finput-charset=utf-8>")
 
-# include_directories(
-# 	${PROJECT_SOURCE_DIR}/include
-# 	${PROJECT_SOURCE_DIR}/src
-# )
-# file(GLOB SRCS
-# 	"${PROJECT_SOURCE_DIR}/include/*"
-# 	"${PROJECT_SOURCE_DIR}/src/*"
-# )
-# 
 file(GLOB SRCS
 	"./*"
 )
