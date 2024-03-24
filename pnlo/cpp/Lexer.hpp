@@ -7,10 +7,6 @@
 #include "Token.hpp"
 
 
-
-
-std::vector<Token> tokenList;
-
 bool isDigit(char str) {
     if (str >= '0' && str <= '9') { return true; }
     return false;
@@ -23,6 +19,19 @@ bool isLetter(char str) {
     if (isAlpha(str) || isDigit(str) || str == '_') { return true; }
     return false;
 }
+
+// -------------------------------------------------------------------------------------------
+// string
+
+
+
+
+
+std::vector<Token> tokenList;
+
+
+
+
 
 class Lexer
 {
@@ -49,27 +58,28 @@ public:
         }
     }
 
-    std::string extractName() {
-        std::string result = "";
+    std::string get_value_identifier() {
+        std::string identifier = "";
         while (isLetter(currentChar())) {
-            result += currentChar();
+            identifier += currentChar();
             advance();
         }
-        return result;
+        return identifier;
     }
 
-    std::string extractString() {
+    std::string get_value_string() {
         // 解析双引号内的字符串
-        std::string result = "";
+        std::string value_string = "";
         advance(); // 跳过第一个双引号
         while (currentChar() != '\0' && currentChar() != '\"') {
-            result += currentChar();
+            value_string += currentChar();
             advance();
         }
         advance(); // 跳过最后一个双引号
-        return result;
+        return value_string;
     }
-    std::string extractNumber() {
+    
+    std::string get_value_number() {
         std::string result = "";
         bool hasDecimal = false;
         bool isNegative = false;
@@ -121,20 +131,17 @@ public:
                 continue;
             }
             else if (isLetter(currentChar())) {
-                std::string value = extractName();
-                return Token(TOKEN_IDENTIFIER, value);
+                return Token(value_identifier, get_value_identifier());
             }
             else if (currentChar() == '\"') {
-                std::string value = extractString();
-                return Token(TOKEN_STRING, value);
+                return Token(value_string, get_value_string());
             }
 
           
 
 
             else if (isDigit(currentChar()) || currentChar() == '.' || currentChar() == '+' || currentChar() == '-') {
-                std::string value = extractNumber();
-                return Token(TOKEN_NUMBER, value);
+                return Token(value_number, get_value_number());
             }
             else if (currentChar() == '/') {
                 advance();
@@ -165,13 +172,13 @@ public:
             switch (currentChar()) {
                 case '>':
                     advance();
-                    return Token(TOKEN_XE, ">");
+                    return Token(begin_object, ">");
                 case '~':
                     advance();
-                    return Token(TOKEN_XW, "~");
+                    return Token(end_object, "~");
                 case '=':
                     advance();
-                    return Token(TOKEN_ASS, "=");
+                    return Token(name_ass, "=");
                 case ';':
                     advance();
                     return Token(TOKEN_SEM, ";");
