@@ -51,3 +51,6 @@ pnlo.exe
 pnlo.exe/
 */pnlo.exe
 */pnlo
+
+.antlr/
+.antlr

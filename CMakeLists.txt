@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.19)
 #add_subdirectory ("src/cpp")
 
 project ("main")
-add_subdirectory ("pnlo/cpp")
+add_subdirectory ("pnlo")
 
 
 # MSVC utf-8
