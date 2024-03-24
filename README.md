@@ -32,7 +32,25 @@ Time = 2207;
 OFF = false;
 ON = true;
 
-// [obj]
+// obj >
 //    yes = true;
 // ~
+
+a.b.c.d >
+  Marx: 23;
+  Marx = 23;
+~
+
+a > b > c > d >
+  Marx: 23;
+  Marx = 23;
+~~~~
+
+
+
+
+/*
+  test
+*/
+
 ```
