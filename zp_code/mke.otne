@@ -26,7 +26,7 @@ Nopr >
     Nson = 2506;
     "Maro" = 19;
     Tawer_ = "qwrr r";
-    [Test]
+    Test >
         Nop = 1;
         Ropt = 2;
     ~

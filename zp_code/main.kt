@@ -1,5 +1,5 @@
 // This is a comment
-"NSON" = "NScript Object Notation";
+"PNLO" = "NScript Object Notation";
 "version"="1.0";
 
 // Windows 11, 2023-10-21 
@@ -73,7 +73,7 @@ a.a.a >
 
 a:
 	"Data"="10", 
-	"Text"="NSON",
+	"Text"="PNLO",
 	b:
 		"Data"="we", 
 		"qwe"="qwe",
@@ -99,29 +99,29 @@ a:
 
 a = {
 	"Data"="10";
-	"Text"="NSON";
+	"Text"="PNLO";
 	b = {
 		"Data"="10";
-		"Text"="NSON";
+		"Text"="PNLO";
 		c = {
 			"Data"="10";
-			"Text"="NSON";
+			"Text"="PNLO";
 		}
 	}
 }
 
 a {
 	"Data"="10";
-	"Text"="NSON";
+	"Text"="PNLO";
 	b {
 		"Data"="10";
-		"Text"="NSON";
+		"Text"="PNLO";
 		c {
 			"Data"="10";
-			"Text"="NSON";
+			"Text"="PNLO";
 			z {
 				"Data"="10";
-				"Text"="NSON";
+				"Text"="pnlo";
 			}
 		}
 	}
