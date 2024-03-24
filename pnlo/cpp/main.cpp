@@ -19,18 +19,18 @@ int main()
     std::string input = ojb.Read();
 
     Lexer lexer = Lexer(input);
+    Lexer::Token token = lexer.getNextToken();
 
-    Token token = lexer.getNextToken();
 
-    while (token.type != TOKEN_END)
+    while (token.type != lexer.TOKEN_END)
     {
-        tokenList.push_back(token);
+        lexer.tokenList.push_back(token);
         // std::cout << "Token: " << token.value << ", Type: " << token.type << std::endl;
         token = lexer.getNextToken();
     }
 
-    tokenList.push_back(token);
-    std::map<std::string, Token> obj = paser(tokenList);
+    lexer.tokenList.push_back(token);
+    std::map<std::string, Lexer::Token> obj = paser(lexer.tokenList);
 
     std::cout << "Pnlo:" << obj["Pnlo"].value << std::endl;
     std::cout << "version:" << obj["version"].value << std::endl;
