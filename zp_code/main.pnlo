@@ -55,6 +55,22 @@
 "button.y"=auto;
 
 
+a: a: a:
+;;;
+
+a > a > a >
+;;;
+
+a > a > a >
+~~~
+
+a > a > a >
+~~~
+
+a.a.a >
+~
+
+
 a:
 	"Data"="10", 
 	"Text"="NSON",

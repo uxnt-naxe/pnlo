@@ -16,12 +16,12 @@
 "winXP" = "Rest";
 Gokoe = "2024-3-16";
 
-[]
+>
     "Kioe" = "Rest";
     Tenox = "2024-3-16";
 ~
 
-[Nopr]
+Nopr >
     App = 2007;
     Nson = 2506;
     "Maro" = 19;

@@ -25,11 +25,12 @@ maoe = "horpa";
 
 /*
 
-[windows]
+windows >
     text = "Hello World!";
     w = "auto";
     h = "auto";
-    [button]
+    
+    button >
         text = "Run!";
         x = "auto";
     ~
