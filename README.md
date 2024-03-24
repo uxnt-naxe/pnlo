@@ -36,6 +36,17 @@ ON = true;
 //    yes = true;
 // ~
 
+a.b.c.d >
+  Marx: 23;
+  Marx = 23;
+~
+
+a > b > c > d >
+  Marx: 23;
+  Marx = 23;
+~~~~
+
+
 
 
 /*
