@@ -9,59 +9,65 @@
 
 class Lexer
 {
-private:
-    std::string input;
-    int position;
-public:
-
+    private:
+        std::string input;
+        int position;
+    public:
         // token_type
-    enum TokenType {
-            // EOF        
-            value_identifier,    // 标识符 azAZ09_
-            value_string,        // 字符串
-            value_number,        // 数字
-            value_true,          // true
-            value_false,         // false
-            value_null,          // null
+        enum TokenType {
+                // EOF        
+                value_identifier,    // 标识符 azAZ09_
+                value_string,        // 字符串
+                value_integer,       // 整数
+                value_float,         // 小数
 
-            value_integer,
-            value_float,
+                value_false,         // false 假
+                value_true,          // true 真
+                
+
+                value_null,          // null 空白
 
 
-            name_ass, // "="   name_separator
 
-            TOKEN_SEM, // ";"
+                name_ass, // "="   name_separator
 
-            // TOKEN_WS,   // [ \t\n\r]+ -> skip
+                TOKEN_SEM, // ";"
+                // TOKEN_WS,   // [ \t\n\r]+ -> skip
+                begin_object,  // >
+                end_object,  // ~
 
-            begin_object,  // >
-            end_object,  // ~
+                TOKEN_END  // !
+            };
 
-            TOKEN_END  // !
+        struct Token {
+            TokenType type;
+            std::string value;
+            Token() {}
+            Token(TokenType t, const std::string &v) : type(t), value(v) {}
         };
 
-    struct Token {
-        TokenType type;
-        std::string value;
-        Token() {}
-        Token(TokenType t, const std::string &v) : type(t), value(v) {}
-    };
-
-    std::vector<Token> tokenList;
+        std::vector<Token> tokenList;
 
 
 
-    Lexer(const std::string &text) : input(text), position(0) {}
+        Lexer(const std::string &text) : input(text), position(0) {}
 
-    char getNextChar();
-    void Next();
-    void skipWhitespace();
+        char getNextChar();
+        void Next();
+        void skipWhitespace();
 
-    std::string get_value_identifier();
-    std::string get_value_string();
-    std::string get_value_number();
+        std::string get_value_identifier();
+        std::string get_value_string();
+        std::string get_value_integer();
+        std::string get_value_float();
 
-    Token getNextToken();
+
+
+
+
+        std::string get_value_number();
+
+        Token getNextToken();
 
 };
 
