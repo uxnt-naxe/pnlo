@@ -122,11 +122,11 @@ public:
             }
             else if (isLetter(currentChar())) {
                 std::string value = extractName();
-                return Token(TOKEN_IDN, value);
+                return Token(TOKEN_IDENTIFIER, value);
             }
             else if (currentChar() == '\"') {
                 std::string value = extractString();
-                return Token(TOKEN_STR, value);
+                return Token(TOKEN_STRING, value);
             }
 
           
@@ -134,7 +134,7 @@ public:
 
             else if (isDigit(currentChar()) || currentChar() == '.' || currentChar() == '+' || currentChar() == '-') {
                 std::string value = extractNumber();
-                return Token(TOKEN_NUM, value);
+                return Token(TOKEN_NUMBER, value);
             }
             else if (currentChar() == '/') {
                 advance();
