@@ -5,6 +5,8 @@ project("pnlo")
 
 # C++17 - 32bit static libgcc
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 17)
+
 IF(CMAKE_SYSTEM_NAME MATCHES "Windows")
 	set(CMAKE_CXX_FLAGS "-static")
 ENDIF()

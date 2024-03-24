@@ -6,6 +6,7 @@
 //    \/_/     \/_/ \/_/   \/_____/   \/_____/ 
 //                                  
 // Pnlo This is a comment, patorjk Sub-Zero
+
 "Pnlo" = "Purple Neon Light Object";
 "version" = "1.0";
 
@@ -20,7 +21,7 @@ Time = 2207;
 OFF = false;
 ON = true;
 
-// [obj]
+// obj >
 //    yes = true;
 // ~
 

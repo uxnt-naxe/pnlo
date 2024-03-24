@@ -1,4 +1,4 @@
-#include "TokenType.hpp"
+#include "Token/Token.hpp"
 #include "Lexer.hpp"
 #include "Parse.hpp"
 

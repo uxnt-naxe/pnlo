@@ -4,21 +4,9 @@
 #include <vector>
 #include <map>
 
-enum TokenType {
-    TOKEN_IDN, // 标识符 azAZ09_
-    TOKEN_STR, // 字符串
-    TOKEN_NUM, // 数字
-    TOKEN_ASS, // "="
-    TOKEN_SEM, // ";"
-    TOKEN_END  // !
-};
+#include "Token/Token.hpp"
 
-struct Token {
-    TokenType type;
-    std::string value;
-    Token() {}
-    Token(TokenType t, const std::string &v) : type(t), value(v) {}
-};
+
 
 
 std::vector<Token> tokenList;
@@ -132,24 +120,23 @@ public:
                 skipWhitespace();
                 continue;
             }
-
-            if (isLetter(currentChar())) {
+            else if (isLetter(currentChar())) {
                 std::string value = extractName();
                 return Token(TOKEN_IDN, value);
             }
-
-            if (currentChar() == '\"') {
+            else if (currentChar() == '\"') {
                 std::string value = extractString();
                 return Token(TOKEN_STR, value);
             }
 
-            if (isDigit(currentChar()) || currentChar() == '.' || currentChar() == '+' || currentChar() == '-') {
+          
+
+
+            else if (isDigit(currentChar()) || currentChar() == '.' || currentChar() == '+' || currentChar() == '-') {
                 std::string value = extractNumber();
                 return Token(TOKEN_NUM, value);
             }
-
-            if (currentChar() == '/') {
-
+            else if (currentChar() == '/') {
                 advance();
                 if (currentChar() == '/') {
                     advance();
@@ -159,13 +146,13 @@ public:
                     }
                     continue; // 继续解析下一个Token
                 }
-                
-                
                 else {
                     std::cerr << "Error: Invalid Character" << std::endl;
                     exit(1);
                 }
             }
+            
+
 
             
 
@@ -176,6 +163,12 @@ public:
 
 
             switch (currentChar()) {
+                case '>':
+                    advance();
+                    return Token(TOKEN_XE, ">");
+                case '~':
+                    advance();
+                    return Token(TOKEN_XW, "~");
                 case '=':
                     advance();
                     return Token(TOKEN_ASS, "=");
