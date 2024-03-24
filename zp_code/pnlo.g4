@@ -16,7 +16,7 @@ obj
     | '>' '~'
     ;
 kay
-    : STRING ':' value ';' 
+    : STRING ( '=' | ':' ) value ';' 
     ;
 
 arr
