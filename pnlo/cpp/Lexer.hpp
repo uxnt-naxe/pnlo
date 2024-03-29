@@ -4,8 +4,7 @@
 #include <vector>
 #include <map>
 
-
-
+#include "token/token.hpp"
 
 class Lexer
 {
@@ -14,42 +13,9 @@ class Lexer
         int position;
     public:
         // token_type
-        enum TokenType {
-                // EOF        
-                value_identifier,    // 标识符 azAZ09_
-                value_string,        // 字符串
-                value_integer,       // 整数
-                value_float,         // 小数
-
-                value_false,         // false 假
-                value_true,          // true 真
-                
-
-                value_null,          // null 空白
-
-
-
-                name_ass, // "="   name_separator
-
-                TOKEN_SEM, // ";"
-                // TOKEN_WS,   // [ \t\n\r]+ -> skip
-                begin_object,  // >
-                end_object,  // ~
-
-                TOKEN_END  // !
-            };
-
-        struct Token {
-            TokenType type;
-            std::string value;
-            Token() {}
-            Token(TokenType t, const std::string &v) : type(t), value(v) {}
-        };
-
+       
         std::vector<Token> tokenList;
-
-
-
+        
         Lexer(const std::string &text) : input(text), position(0) {}
 
         char getNextChar();
