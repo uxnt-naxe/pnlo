@@ -15,6 +15,8 @@ class Lexer
         // token_type
         // std::vector<Token> tokenList;
 
+        // Tokens
+
         Lexer(const std::string &text) : input(text), position(0) {}
         ~Lexer(){}
         
