@@ -1,10 +1,7 @@
 
 
-// e
 
 enum TokenType {
-    // EOF   
-         EOF,
     // key_identifier,
     // key_string,
     // key_value
@@ -14,10 +11,6 @@ enum TokenType {
 
     token_integer,       // 整数
     token_float,         // 小数
-
-
-
-
 
     token_false,         // false 假
     token_true,          // true 真
@@ -31,7 +24,8 @@ enum TokenType {
     token_colon,         // : 冒号
     token_semicolon,     // ; 分号
 
-    token_greater_than,  // > 大于
+    token_less_than,     // LT < 小于 
+    token_greater_than,  // GT > 大于
     token_tilde,         // ~ 
 
     

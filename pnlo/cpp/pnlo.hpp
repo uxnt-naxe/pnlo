@@ -1,7 +1,7 @@
 #include "Lexer.hpp"
 #include "Parser.hpp"
 
-class Pnlo2
+class Pnlo
 {
     
 // public:
@@ -13,7 +13,5 @@ class Pnlo2
     // {
     //     
     // }
-
-   
 
 };
