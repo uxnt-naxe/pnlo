@@ -1,6 +1,9 @@
 #include "Lexer.hpp"
 #include "Parser.hpp"
 
+#ifndef Pnlo_H
+#define Pnlo_H
+
 class Pnlo
 {
     
@@ -15,3 +18,5 @@ class Pnlo
     // }
 
 };
+
+#endif

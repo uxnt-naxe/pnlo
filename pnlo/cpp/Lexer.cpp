@@ -6,8 +6,6 @@
 
 #include "Lexer.hpp"
 
-
-
 bool isDigit(char str) {
     if (str >= '0' && str <= '9') { return true; }
     return false;

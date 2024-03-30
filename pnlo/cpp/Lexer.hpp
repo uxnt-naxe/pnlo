@@ -6,6 +6,9 @@
 
 #include "token/token.hpp"
 
+#ifndef Lexer_H
+#define Lexer_H
+
 class Lexer
 {
     private:
@@ -35,7 +38,7 @@ class Lexer
 
 };
 
-
+#endif
 
 // std::map<std::string, Token> varMap = paser(tokenList);
 // varMap["这里是varName"] = > 这个就是value 的token，如果要知道它的值，只要加.data就可以输出std::string类型的了

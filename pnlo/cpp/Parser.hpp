@@ -16,17 +16,22 @@
 
 */
 
+#ifndef Parser_H
+#define Parser_H
+
 class Parser
 {
+    
     public:
         // std::vector<Token> tokenList
         // std::vector<Token> tokenList;
 
         Parser();
-        std::map<std::string, Token> Rawxxx(std::vector<Token> tokenList);
+        std::map<std::string, Token> parser(std::vector<Token> tokenList);
         // ~Parser(){}
 };
 
 
 // std::map<std::string, Token> paser(std::vector<Token> tokenList)
 
+#endif
