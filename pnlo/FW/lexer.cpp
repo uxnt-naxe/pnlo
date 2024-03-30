@@ -7,6 +7,34 @@
 #include "Windows.h"
 using namespace std;
 
+
+
+
+/*
+enum xPnloTokenType {
+
+    token_identifier,
+    token_string,
+
+    token_integer,       // 整数
+    token_float,         // 小数
+
+    token_false,         // false 假
+    token_true,          // true 真
+    token_null,          // null 空白
+
+    token_equal_sign,    // = 等号
+    token_semicolon,     // ; 分号
+
+    token_greater_than,  // >
+    token_tilde,         // ~
+
+    token_end
+
+};
+*/
+
+
 template<class T>
 int getLength(T& arr) { return sizeof(arr) / sizeof(arr[0]); }
 

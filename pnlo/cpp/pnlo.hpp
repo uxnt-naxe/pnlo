@@ -3,6 +3,7 @@
 
 class Pnlo2
 {
+    
 // public:
     // std::string str = "";
 
