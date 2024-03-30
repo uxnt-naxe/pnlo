@@ -18,7 +18,10 @@ int main()
     std::string input = ojb.Read();
     
     Lexer lexer = Lexer(input);
+
     Token token = lexer.getNextToken();
+
+    
 
     std::vector<Token> tokenList;
 
