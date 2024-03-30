@@ -1,9 +1,9 @@
 #include "Lexer.hpp"
 #include "Parser.hpp"
 
-class Pnlo
+class Pnlo2
 {
-public:
+// public:
     // std::string str = "";
 
     // std::map<std::string, Token> obj = {};
@@ -13,8 +13,6 @@ public:
     //     
     // }
 
-    Pnlo parser(std::string str) {
-        
-    }
+   
 
 };

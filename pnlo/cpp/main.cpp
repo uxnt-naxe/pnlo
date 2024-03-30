@@ -51,17 +51,12 @@ int main()
   //   std::cout << "Time:" << obj["Time"].value << std::endl;
   //   std::cout << "OFF:" << obj["OFF"].value << std::endl;
   //   std::cout << "ON:" << obj["ON"].value << std::endl;
-  //   // std::cout << Nopt["hello"].value << std::endl;
+  //   std::cout << Nopt["hello"].value << std::endl;
 
 
-    // Pnlo laop = Pnlo();
-    // std::cout << "laop:" << laop["qweqwe"]["w"] << std::endl;
 
-    int Anbc11 = 1;
 
-    int 1GH = 1;
 
-    int _1GH_ = 1;
 
     return 0;
 }
