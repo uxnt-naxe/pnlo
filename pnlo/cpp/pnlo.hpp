@@ -17,12 +17,4 @@ public:
         
     }
 
-    std::string operator[](std::string str) {
-        return str;
-    }
-
-
-
-    // pnlo pnlo::parse(const std::string& str) {
-    // }
 };

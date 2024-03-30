@@ -28,7 +28,7 @@ int main()
     while (token.type != token_end)
     {
         tokenList.push_back(token);
-        // std::cout << "Token: " <<"\"" << token.value << "\"" << ", Type: " << token.type << std::endl;
+        std::cout << "Token: " <<"\"" << token.value << "\"" << ", Type: " << token.type << std::endl;
         token = lexer.getNextToken();
     }
 
@@ -41,17 +41,27 @@ int main()
     // Pnlo laop = laop.parser(input);
     // std::cout << "Pnlo Pnlo:" << laop["Pnlo"] << std::endl;
     
-    std::cout << "Pnlo:" << obj["Pnlo"].value << std::endl;
-    std::cout << "version:" << obj["version"].value << std::endl;
-    std::cout << "Object1:" << obj["Object1"].value << std::endl;
-    std::cout << "Object2:" << obj["Object2"].value << std::endl;
-    std::cout << "Object3:" << obj["Object3"].value << std::endl;
-    std::cout << "Object4:" << obj["Object4"].value << std::endl;
-    std::cout << "main_obj_:" << obj["main_obj_"].value << std::endl;
-    std::cout << "Time:" << obj["Time"].value << std::endl;
-    std::cout << "OFF:" << obj["OFF"].value << std::endl;
-    std::cout << "ON:" << obj["ON"].value << std::endl;
-    // std::cout << Nopt["hello"].value << std::endl;
+  //   std::cout << "Pnlo:" << obj["Pnlo"].value << std::endl;
+  //   std::cout << "version:" << obj["version"].value << std::endl;
+  //   std::cout << "Object1:" << obj["Object1"].value << std::endl;
+  //   std::cout << "Object2:" << obj["Object2"].value << std::endl;
+  //   std::cout << "Object3:" << obj["Object3"].value << std::endl;
+  //   std::cout << "Object4:" << obj["Object4"].value << std::endl;
+  //   std::cout << "main_obj_:" << obj["main_obj_"].value << std::endl;
+  //   std::cout << "Time:" << obj["Time"].value << std::endl;
+  //   std::cout << "OFF:" << obj["OFF"].value << std::endl;
+  //   std::cout << "ON:" << obj["ON"].value << std::endl;
+  //   // std::cout << Nopt["hello"].value << std::endl;
+
+
+    // Pnlo laop = Pnlo();
+    // std::cout << "laop:" << laop["qweqwe"]["w"] << std::endl;
+
+    int Anbc11 = 1;
+
+    int 1GH = 1;
+
+    int _1GH_ = 1;
 
     return 0;
 }
