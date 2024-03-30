@@ -2,6 +2,8 @@
 
 // Neon ReadFile
 // string NeonFile(string path);
+#ifndef NeonFile_H
+#define NeonFile_H
 
 namespace Neon
 {
@@ -13,7 +15,7 @@ namespace Neon
     public:
         // std::string path
         File(/* args */);
-        ~File();
+        // ~File();
 
         File(std::string path);
         std::string Read(std::string path);
@@ -22,3 +24,6 @@ namespace Neon
         void Write(std::string buffer);
     };
 }
+
+
+#endif

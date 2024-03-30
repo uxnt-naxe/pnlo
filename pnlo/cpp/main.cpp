@@ -33,7 +33,10 @@ int main()
     }
 
     // lexer.tokenList.push_back(token);
-    std::map<std::string, Token> obj = paser(tokenList);
+
+    Parser rarser = Parser(tokenList);
+
+    std::map<std::string, Token> obj = rarser.Paser(tokenList);
 
 
     // Lexer > Parser > 

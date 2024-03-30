@@ -16,11 +16,13 @@ bool isAlpha(char str) {
     if ((str >= 'A' && str <= 'Z') || (str >= 'a' && str <= 'z')) { return true; }
     return false;
 }
-bool isLetter(char str) {
-    if (isAlpha(str) || str == '_') { return true; }
-    // if (isAlpha(str) || isDigit(str) || str == '_') { return true; }
-    return false;
-}
+
+
+// bool isLetter(char str) {
+//     if (isAlpha(str) || str == '_') { return true; }
+//     // if (isAlpha(str) || isDigit(str) || str == '_') { return true; }
+//     return false;
+// }
 
 
 
@@ -48,10 +50,14 @@ bool isLetter(char str) {
         }
     }
 
-    // get_value_identifier
+    // get_value_identifier isLetter
     std::string Lexer::get_value_identifier() {
         std::string value_identifier = "";
-        while (isLetter(getNextChar()) || isDigit(getNextChar()) ) {
+        while (
+            isAlpha(getNextChar()) || 
+            getNextChar() == '_' || 
+            isDigit(getNextChar()) 
+            ) {
             value_identifier += getNextChar();
             Next();
         }
@@ -146,14 +152,13 @@ bool isLetter(char str) {
                 continue;
             }
 
-
             else if (isAlpha(getNextChar()) || getNextChar() == '_') {
                 std::string v = get_value_identifier();
                 if (v == "false") {
                     return Token(token_false, "false");
-                }else if(v == "true"){
+                } else if(v == "true"){
                     return Token(token_true, "true");
-                }else if(v == "null"){
+                } else if(v == "null"){
                     return Token(token_null, "null");
                 }
                 return Token(token_identifier, v);
@@ -163,9 +168,11 @@ bool isLetter(char str) {
             }
 
 
-       
-            
-            else if (isDigit(getNextChar()) || getNextChar() == '.'  || getNextChar() == '+' || getNextChar() == '-') {
+            else if (
+                isDigit(getNextChar()) || 
+                getNextChar() == '.'  || 
+                getNextChar() == '+' || 
+                getNextChar() == '-') {
                 std::string v = get_value_number();
                 return Token(token_integer, v);
             }
@@ -188,6 +195,7 @@ bool isLetter(char str) {
                 }
             } else {
                 switch (getNextChar()) {
+
                     case '=':
                         Next();
                         return Token(token_equal, "=");
@@ -198,23 +206,26 @@ bool isLetter(char str) {
                         Next();
                         return Token(token_semicolon, ";");
 
+                    case '<':
+                        Next();
+                        return Token(token_less_than, "<");
                     case '>':
                         Next();
                         return Token(token_greater_than, ">");
-                    case '~':
-                        Next();
-                        return Token(token_tilde, "~");
-
+                    
                     case '[':
                         Next();
-                        return Token(token_bracket_left, "[");
+                        return Token(token_left_bracket, "[");
                     case ']':
                         Next();
-                        return Token(token_bracket_right, "]");
+                        return Token(token_right_bracket, "]");
 
                     case ',':
                         Next();
                         return Token(token_comma, ",");
+                    case '~':
+                        Next();
+                        return Token(token_tilde, "~");
 
                     default:
                         std::cerr << "Error: Invalid Character" << std::endl;

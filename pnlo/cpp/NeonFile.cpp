@@ -21,9 +21,9 @@ namespace Neon
         // NeonPlus-this->path = path;
     }
 
-    File::~File()
-    {
-    }
+    // File::~File()
+    // {
+    // }
 
     File::File(std::string path)
     {
