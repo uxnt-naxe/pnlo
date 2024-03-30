@@ -1,5 +1,11 @@
 // 空白
 #include "Parser.hpp"
+#include "Token/token.hpp"
+
+
+Parser::Parser(){
+
+}
 
 std::map<std::string, Token> Parser::Rawxxx(std::vector<Token> tokenList) {
 

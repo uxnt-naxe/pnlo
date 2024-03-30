@@ -1,5 +1,6 @@
 
-
+#ifndef token_H
+#define token_H
 
 enum TokenType {
     // ------------------------------
@@ -37,3 +38,4 @@ struct Token {
 };
 
 
+#endif
