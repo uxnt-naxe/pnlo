@@ -13,11 +13,11 @@ class Lexer
         int position;
     public:
         // token_type
-       
-        std::vector<Token> tokenList;
-        
-        Lexer(const std::string &text) : input(text), position(0) {}
+        // std::vector<Token> tokenList;
 
+        Lexer(const std::string &text) : input(text), position(0) {}
+        ~Lexer(){}
+        
         char getNextChar();
         void Next();
         void skipWhitespace();
@@ -26,10 +26,6 @@ class Lexer
         std::string get_value_string();
         std::string get_value_integer();
         std::string get_value_float();
-
-
-
-
 
         std::string get_value_number();
 
