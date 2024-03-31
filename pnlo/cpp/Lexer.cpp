@@ -173,25 +173,25 @@ std::string Lexer::scan_integer() {
                 next_ch() == '_'
                 ){
                 std::string str = scan_identifier();
-                if( str == "true" ){ return token(token_true, str);
+                if( str == "true" ){ return token(v_true, str);
                 } else if (
-                    str == "false" ){ return token(token_false, str);
+                    str == "false" ){ return token(v_false, str);
                 } else if (
-                    str == "null" ){ return token(token_null, str);
+                    str == "null" ){ return token(v_null, str);
                 }
-                return token(token_identifier, str);
+                return token(id_identifier, str);
             } else if (
                 next_ch() == '\"'
                 ){
-                return token(token_string, scan_string());
+                return token(id_string, scan_string());
             } else if (
                 isDigit(next_ch()) || 
                 next_ch() == '.'  || 
                 next_ch() == '+' || 
                 next_ch() == '-'
                 ){
-                std::string v = scan_number();
-                return token(token_integer, v);
+                std::string vint = scan_number();
+                return token(v_int, vint);
             } else if (
                 next_ch() == '/'
                 ){

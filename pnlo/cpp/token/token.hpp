@@ -7,16 +7,18 @@
 
 enum token_type {
 
-    token_null = 0,          // null  空白
+    v_null = 0,          // null  空白
     // ------------------------------
-    token_identifier,    // 标识符 azAZ09_
-    token_string,        // 字符串
+    id_identifier,    // 标识符 azAZ09_
+    id_string,        // 字符串
     // ------------------------------
-    token_integer,       // 整数
-    token_float,         // 小数
+    v_int,       // 整数
+    b_float,         // 小数
     // ------------------------------
-    token_false,         // false 假
-    token_true,          // true  真
+    v_false,         // false 假
+    v_true,          // true  真
+
+    
     
     // 符号
     // ------------------------------
@@ -45,7 +47,7 @@ struct token {
 };
 
 
-
+// (null, "null")
 
 
 #endif
