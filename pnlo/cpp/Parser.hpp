@@ -23,6 +23,7 @@ class Parser
 {
     public:
     Parser();
+    ~Parser();
         // std::vector<Token> tokenList
         // std::vector<Token> tokenList;
 

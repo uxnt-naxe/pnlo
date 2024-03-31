@@ -3,9 +3,8 @@
 #include "Token/token.hpp"
 
 
-Parser::Parser() {
-
-}
+Parser::Parser() {}
+Parser::~Parser() {}
 
 std::map<std::string, token> Parser::parser(std::vector<token> tokenList) {
 
