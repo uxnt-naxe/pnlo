@@ -18,24 +18,24 @@ enum token_type {
     v_false,         // false 假
     v_true,          // true  真
 
+    v_obj,          //
+    v_key_value,    // 
     
-    
-    // 符号
+    // symbol 符号
     // ------------------------------
-    token_less_than,     // LT < 小于 
-    token_greater_than,  // GT > 大于
+    symbol_less_than,     // LT < 小于 
+    symbol_greater_than,  // GT > 大于
     // ------------------------------
-    token_left_bracket,   // [ 
-    token_right_bracket,  // ] 
+    symbol_left_bracket,   // [ 
+    symbol_right_bracket,  // ] 
     // ------------------------------
-    token_comma,          // ,
-    token_equal,          // = 等号
-    token_colon,          // : 冒号
-    token_semicolon,      // ; 分号
-    token_tilde,          // ~ 
+    symbol_comma,          // ,
+    symbol_equal,          // = 等号
+    symbol_colon,          // : 冒号
+    symbol_semicolon,      // ; 分号
+    symbol_tilde,          // ~ 
     // ------------------------------
     token_end,            // !
-
 };  // ok
 
 struct token {

@@ -21,15 +21,18 @@
 
 class Parser
 {
-    public:
+private:
+    std::vector<token> TL;
+    int ti = 0;
+
+public:
     Parser();
     ~Parser();
         // std::vector<Token> tokenList
         // std::vector<Token> tokenList;
 
+    std::map<std::string, token> parser(std::vector<token> TL); //tokenList
         
-        std::map<std::string, token> parser(std::vector<token> tokenList);
-        // ~Parser(){}
 };
 
 

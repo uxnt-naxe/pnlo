@@ -212,31 +212,31 @@ std::string Lexer::scan_integer() {
                 switch (next_ch()) {
                     case '=':
                         next();
-                        return token(token_equal, "=");
+                        return token(symbol_equal, "=");
                     case ':':
                         next();
-                        return token(token_colon, ":");    
+                        return token(symbol_colon, ":");    
                     case ';':
                         next();
-                        return token(token_semicolon, ";");
+                        return token(symbol_semicolon, ";");
                     case '<':
                         next();
-                        return token(token_less_than, "<");
+                        return token(symbol_less_than, "<");
                     case '>':
                         next();
-                        return token(token_greater_than, ">");
+                        return token(symbol_greater_than, ">");
                     case '[':
                         next();
-                        return token(token_left_bracket, "[");
+                        return token(symbol_left_bracket, "[");
                     case ']':
                         next();
-                        return token(token_right_bracket, "]");
+                        return token(symbol_right_bracket, "]");
                     case ',':
                         next();
-                        return token(token_comma, ",");
+                        return token(symbol_comma, ",");
                     case '~':
                         next();
-                        return token(token_tilde, "~");
+                        return token(symbol_tilde, "~");
                     default:
                         std::cerr << "Error: Invalid Character" << std::endl;
                         exit(1);

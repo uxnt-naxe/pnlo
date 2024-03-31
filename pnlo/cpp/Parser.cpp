@@ -6,41 +6,41 @@
 Parser::Parser() {}
 Parser::~Parser() {}
 
-std::map<std::string, token> Parser::parser(std::vector<token> tokenList) {
+
+
+std::map<std::string, token> Parser::parser(std::vector<token> TL) {
 
     std::map<std::string, token> varMap;
 
     // for (int i = 0; i < tokenList.size(); i++) {
-    int i = 0;
-    while (true)
-    {
+    int i = 0 ;
 
+    while (true) {
         if (
-            tokenList[i].type != token_string &&
-            tokenList[i].type != token_identifier
-         )
+            TL[i].type != id_string &&
+            TL[i].type != id_identifier
+            )
             break; // 识别并储存varName
-        std::string varName = tokenList[i].value;
-
+        std::string varName = TL[i].value;
         i++; // 下一个token
-        if (tokenList[i].type != token_equal && tokenList[i].type != token_colon)
+        if (TL[i].type != symbol_equal && TL[i].type != symbol_colon)
             break; // 识别"="
         i++;       // 下一个token
         if (
-            tokenList[i].type != token_string && 
-            tokenList[i].type != token_identifier && 
-            tokenList[i].type != token_false && 
-            tokenList[i].type != token_true && 
-            tokenList[i].type != token_null && 
-            tokenList[i].type != token_integer
+            TL[i].type != id_string && 
+            TL[i].type != id_identifier && 
+            TL[i].type != v_false && 
+            TL[i].type != v_true && 
+            TL[i].type != v_null && 
+            TL[i].type != v_int
             )
             break; // 识别并将varName和它的值一起存到map里
-        varMap[varName] = tokenList[i];
+        varMap[varName] = TL[i];
         i++;
-        if (tokenList[i].type != token_semicolon)
+        if (TL[i].type != symbol_semicolon)
             break; // 识别";"
         i++;
-        if (tokenList[i].type == token_end)
+        if (TL[i].type == token_end)
             break;
         // i++;
     }

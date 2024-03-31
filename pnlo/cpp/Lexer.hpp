@@ -9,9 +9,6 @@
 #include "token/token.hpp"
 
 
-#include <vector>
-
-
 
 class Lexer
 {
@@ -21,7 +18,7 @@ class Lexer
     public:
         Lexer(const std::string &str) : m_str(str), m_idx(0) {}
         ~Lexer(){}
-
+        
         std::vector<token> tokens;
         
         char next_ch();
