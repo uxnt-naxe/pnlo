@@ -41,13 +41,11 @@ enum token_type {
 struct token {
     token_type type;
     std::string value;
-
+    
     token() {}
     token(token_type t, const std::string &v) : type(t), value(v) {}
 };
 
-
-// (null, "null")
 
 
 #endif
@@ -69,29 +67,12 @@ struct token {
 
 Pnlo:
 
+    Cpp编程，帮我写数据结构
     key_value: 
       "xxxx" = bool/int/double/string/  array(obj)
 
     obj: 
         > key_value / obj ~
-
-
-
-struct Value
-{
-    bool m_bool;
-    int m_int;
-    double m_double;
-    std::string * m_string;
-
-    std::list<Obj> * m_array;
-    std::map<std::string, Obj> * m_object;
-};
-
-struct Obj {
-    Type m_type;
-    Value m_value;
-};
 
 
 */

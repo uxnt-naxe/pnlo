@@ -32,7 +32,7 @@ public:
         // std::vector<Token> tokenList;
 
     std::map<std::string, token> parser(std::vector<token> TL); //tokenList
-        
+    
 };
 
 
