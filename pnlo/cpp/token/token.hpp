@@ -1,8 +1,13 @@
+#ifndef token_h
+#define token_h
+#include <string>
+#include <list>
+#include <map>
 
-#ifndef token_H
-#define token_H
 
-enum TokenType {
+enum token_type {
+
+    token_null = 0,          // null  空白
     // ------------------------------
     token_identifier,    // 标识符 azAZ09_
     token_string,        // 字符串
@@ -11,8 +16,9 @@ enum TokenType {
     token_float,         // 小数
     // ------------------------------
     token_false,         // false 假
-    token_true,          // true 真
-    token_null,          // null 空白
+    token_true,          // true  真
+    
+    // 符号
     // ------------------------------
     token_less_than,     // LT < 小于 
     token_greater_than,  // GT > 大于
@@ -20,7 +26,7 @@ enum TokenType {
     token_left_bracket,   // [ 
     token_right_bracket,  // ] 
     // ------------------------------
-    token_comma,          //,
+    token_comma,          // ,
     token_equal,          // = 等号
     token_colon,          // : 冒号
     token_semicolon,      // ; 分号
@@ -30,12 +36,60 @@ enum TokenType {
 
 };  // ok
 
-struct Token {
-    TokenType type;
+struct token {
+    token_type type;
     std::string value;
-    Token() {}
-    Token(TokenType t, const std::string &v) : type(t), value(v) {}
+
+    token() {}
+    token(token_type t, const std::string &v) : type(t), value(v) {}
 };
 
 
+
+
+
 #endif
+
+
+
+
+
+
+
+
+
+/*
+
+
+// Obj
+// Value
+
+
+Pnlo:
+
+    key_value: 
+      "xxxx" = bool/int/double/string/  array(obj)
+
+    obj: 
+        > key_value / obj ~
+
+
+
+struct Value
+{
+    bool m_bool;
+    int m_int;
+    double m_double;
+    std::string * m_string;
+
+    std::list<Obj> * m_array;
+    std::map<std::string, Obj> * m_object;
+};
+
+struct Obj {
+    Type m_type;
+    Value m_value;
+};
+
+
+*/

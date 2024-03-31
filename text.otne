@@ -17,10 +17,8 @@ Object2 = "obj-2";
 "Object4" = "obj-4";
 
 main_obj_ = "Main Obj";
-Time = 2207;
+Time = 111;
 OFF = false;
-
-
 ON = true;
 
 
@@ -30,10 +28,6 @@ ON = true;
 //    yes = true;
 // ~
 
-// Test
-obj >
-    a : [ "z" , "z" ] ;
-~
 
 
 

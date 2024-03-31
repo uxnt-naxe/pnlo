@@ -15,123 +15,133 @@ bool isAlpha(char str) {
     return false;
 }
 
-
-// bool isLetter(char str) {
-//     if (isAlpha(str) || str == '_') { return true; }
-//     // if (isAlpha(str) || isDigit(str) || str == '_') { return true; }
-//     return false;
-// }
-
+    // bool isLetter(char str) {
+    //     if (isAlpha(str) || str == '_') { return true; }
+    //     // if (isAlpha(str) || isDigit(str) || str == '_') { return true; }
+    //     return false;
+    // }
 
 
-// -------------------------------------------------------------------------------------------
-// string
-
-    // getNextChar
-    char Lexer::getNextChar() {
-        if (position >= input.length()) {
-            return '\0';
-        }
-        return input[position];
+char Lexer::next_ch() {
+    if (m_idx >= m_str.length()) {
+        return '\0';
     }
+    return m_str[m_idx];
+}
 
+void Lexer::next() { 
+    m_idx++; 
+}
 
-    // Next
-    void Lexer::Next() {
-        position++;
+void Lexer::next_skipWhitespace() {
+    while (
+        next_ch() != '\0' && 
+        isspace(next_ch())
+        ){
+        next();
     }
+}
 
-
-    void Lexer::skipWhitespace() {
-        while (getNextChar() != '\0' && isspace(getNextChar())) {
-            Next();
-        }
+// isLetter
+std::string Lexer::scan_identifier() {
+    std::string str = "";
+    while (
+        isAlpha(next_ch()) || 
+        next_ch() == '_' || 
+        isDigit(next_ch()) 
+        ){
+        str += next_ch();
+        next();
     }
+    return str;
+}
 
-    // get_value_identifier isLetter
-    std::string Lexer::get_value_identifier() {
-        std::string value_identifier = "";
-        while (
-            isAlpha(getNextChar()) || 
-            getNextChar() == '_' || 
-            isDigit(getNextChar()) 
-            ) {
-            value_identifier += getNextChar();
-            Next();
-        }
-        return value_identifier;
+std::string Lexer::scan_string() {
+    std::string str = "";
+    next();
+    while (
+        next_ch() != '\0' &&
+        next_ch() != '\"'
+        ){
+        str += next_ch();
+        next();
     }
+    next();
+    return str;
+}
 
-    // get_value_string
-    std::string Lexer::get_value_string() {
-        // 解析双引号内的字符串
-        std::string value_string = "";
-        Next(); // 跳过第一个双引号
-        while (getNextChar() != '\0' && getNextChar() != '\"') {
-            value_string += getNextChar();
-            Next();
-        }
-        Next(); // 跳过最后一个双引号
-        return value_string;
-    }
+// std::string Lexer::scan_string(std::string str) {
+//     // value_string += getNextChar();
+//     // Next();
+//     std::string str_ = "";
+//     next();
+//     char ch = next_ch();
+//     while (ch != '\0' && ch != '\"') {
+//         str_ += ch;
+//         next();
+//     }
+//     next();
+//     return str_;
+// }   
 
-    // get_value_integer
-    std::string Lexer::get_value_integer() {
-        std::string value_integer = "";
-        while (isDigit(getNextChar())) {
-            value_integer += getNextChar();
-            Next();
-        }
-        return value_integer;
+// get_value_integer
+std::string Lexer::scan_integer() {
+    std::string str = "";
+    while (isDigit(next_ch())) {
+        str += next_ch();
+        next();
     }
+    return str;
+}
+
 
 
 
     // get_value_number
-    std::string Lexer::get_value_number() {
+    std::string Lexer::scan_number() {
         std::string result = "";
         bool hasDecimal = false;
         bool isNegative = false;
         bool hasExponent = false;
         bool hasExponentSign = false;
 
-        if (getNextChar() == '-') {
+        if (next_ch() == '-') {
             isNegative = true;
             result += "-";
-            Next();
+            next();
         }
-        else if (getNextChar() == '+') {
-            Next();
+        else if (next_ch() == '+') {
+            next();
         }
 
         while (
-            getNextChar() != '\0' && 
-            (isDigit(getNextChar()) || 
-            getNextChar() == '.' || 
-            getNextChar() == 'e' ||  getNextChar() == 'E' || 
-            getNextChar() == '+' ||  getNextChar() == '-')
+            next_ch() != '\0' && 
+            (isDigit(next_ch()) || 
+            next_ch() == '.' || 
+            next_ch() == 'e' ||  next_ch() == 'E' || 
+            next_ch() == '+' ||  next_ch() == '-')
             ) {
-            if (getNextChar() == '.') {
+            if (next_ch() == '.') {
                 if (hasDecimal) {
                     
                     break;
                 }
                 hasDecimal = true;
             }
-            else if (getNextChar() == 'e' || getNextChar() == 'E') {
+            else if (next_ch() == 'e' || next_ch() == 'E') {
                 if (hasExponent) {
                     break;
                 }
                 hasExponent = true;
             }
-            else if ((getNextChar() == '+' || getNextChar() == '-') && hasExponent && !hasExponentSign) {
+            else if ((next_ch() == '+' || next_ch() == '-') && hasExponent && !hasExponentSign) {
                 hasExponentSign = true;
             }
-            else if (!isDigit(getNextChar())) {
+            else if (!isDigit(next_ch())) {
                 break;
             }
-            result += getNextChar();
-            Next();
+            result += next_ch();
+            next();
         }
         
         // 检查结果是否是一个有效数字
@@ -142,48 +152,49 @@ bool isAlpha(char str) {
         return result;
     }
 
-    // Lexer::Token Lexer::getNextToken() {
-    Token Lexer::getNextToken() {
-        while (getNextChar() != '\0') {
-            if (isspace(getNextChar())) {
-                skipWhitespace();
+   
+
+
+    token Lexer::next_token() {
+        while (next_ch() != '\0') {
+            if (
+                isspace(next_ch())
+                ){
+                next_skipWhitespace();
                 continue;
-            }
-
-            else if (isAlpha(getNextChar()) || getNextChar() == '_') {
-                std::string v = get_value_identifier();
-                if (v == "false") {
-                    return Token(token_false, "false");
-                } else if(v == "true"){
-                    return Token(token_true, "true");
-                } else if(v == "null"){
-                    return Token(token_null, "null");
+            } else if (
+                isAlpha(next_ch()) || 
+                next_ch() == '_'
+                ){
+                std::string str = scan_identifier();
+                if( str == "true" ){ return token(token_true, str);
+                } else if (
+                    str == "false" ){ return token(token_false, str);
+                } else if (
+                    str == "null" ){ return token(token_null, str);
                 }
-                return Token(token_identifier, v);
-            }
-            else if (getNextChar() == '\"') {
-                return Token(token_string, get_value_string());
-            }
-
-
-            else if (
-                isDigit(getNextChar()) || 
-                getNextChar() == '.'  || 
-                getNextChar() == '+' || 
-                getNextChar() == '-') {
-                std::string v = get_value_number();
-                return Token(token_integer, v);
-            }
-
-
-
-            else if (getNextChar() == '/') {
-                Next();
-                if (getNextChar() == '/') {
-                    Next();
+                return token(token_identifier, str);
+            } else if (
+                next_ch() == '\"'
+                ){
+                return token(token_string, scan_string());
+            } else if (
+                isDigit(next_ch()) || 
+                next_ch() == '.'  || 
+                next_ch() == '+' || 
+                next_ch() == '-'
+                ){
+                std::string v = scan_number();
+                return token(token_integer, v);
+            } else if (
+                next_ch() == '/'
+                ){
+                next();
+                if (next_ch() == '/') {
+                    next();
                     // 跳过双斜线注释内容
-                    while (getNextChar() != '\0' && getNextChar() != '\n') {
-                        Next();
+                    while (next_ch() != '\0' && next_ch() != '\n') {
+                        next();
                     }
                     continue; // 继续解析下一个Token
                 }
@@ -192,50 +203,39 @@ bool isAlpha(char str) {
                     exit(1);
                 }
             } else {
-                switch (getNextChar()) {
-
+                switch (next_ch()) {
                     case '=':
-                        Next();
-                        return Token(token_equal, "=");
+                        next();
+                        return token(token_equal, "=");
                     case ':':
-                        Next();
-                        return Token(token_colon, ":");    
+                        next();
+                        return token(token_colon, ":");    
                     case ';':
-                        Next();
-                        return Token(token_semicolon, ";");
-
+                        next();
+                        return token(token_semicolon, ";");
                     case '<':
-                        Next();
-                        return Token(token_less_than, "<");
+                        next();
+                        return token(token_less_than, "<");
                     case '>':
-                        Next();
-                        return Token(token_greater_than, ">");
-                    
+                        next();
+                        return token(token_greater_than, ">");
                     case '[':
-                        Next();
-                        return Token(token_left_bracket, "[");
+                        next();
+                        return token(token_left_bracket, "[");
                     case ']':
-                        Next();
-                        return Token(token_right_bracket, "]");
-
+                        next();
+                        return token(token_right_bracket, "]");
                     case ',':
-                        Next();
-                        return Token(token_comma, ",");
+                        next();
+                        return token(token_comma, ",");
                     case '~':
-                        Next();
-                        return Token(token_tilde, "~");
-
+                        next();
+                        return token(token_tilde, "~");
                     default:
                         std::cerr << "Error: Invalid Character" << std::endl;
                         exit(1);
                 }
-
             }
-            
-            
-
-
-            
         }
-        return Token(token_end, "");
+        return token(token_end, "");
     }

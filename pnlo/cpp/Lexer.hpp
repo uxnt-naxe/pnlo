@@ -6,35 +6,36 @@
 
 #include "token/token.hpp"
 
-#ifndef Lexer_H
-#define Lexer_H
+#ifndef Lexer_h
+#define Lexer_h
 
 class Lexer
 {
     private:
-        std::string input;
-        int position;
+        std::string m_str;
+        int m_idx;
     public:
         // token_type
         // std::vector<Token> tokenList;
-
         // Tokens
 
-        Lexer(const std::string &text) : input(text), position(0) {}
+        Lexer(const std::string &str) : m_str(str), m_idx(0) {}
         ~Lexer(){}
         
-        char getNextChar();
-        void Next();
-        void skipWhitespace();
+        char next_ch();
+        void next();
+        void next_skipWhitespace();
+        void next_comments();
+        
+        std::string scan_identifier();
+        std::string scan_string();
+        std::string scan_integer();
+        std::string scan_float();
+        std::string scan_bool();
+        std::string scan_number();
 
-        std::string get_value_identifier();
-        std::string get_value_string();
-        std::string get_value_integer();
-        std::string get_value_float();
-
-        std::string get_value_number();
-
-        Token getNextToken();
+        // std::string scan_string(std::string str);
+        token next_token();
 
 };
 

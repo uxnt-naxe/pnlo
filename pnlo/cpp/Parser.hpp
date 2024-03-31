@@ -16,8 +16,8 @@
 
 */
 
-#ifndef Parser_H
-#define Parser_H
+#ifndef Parser_h
+#define Parser_h
 
 class Parser
 {
@@ -27,7 +27,7 @@ class Parser
         // std::vector<Token> tokenList;
 
         Parser();
-        std::map<std::string, Token> parser(std::vector<Token> tokenList);
+        std::map<std::string, token> parser(std::vector<token> tokenList);
         // ~Parser(){}
 };
 

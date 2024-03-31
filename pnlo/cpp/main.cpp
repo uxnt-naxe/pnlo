@@ -18,20 +18,20 @@ int main()
     
     Lexer lexer = Lexer(input);
 
-    Token token = lexer.getNextToken();
+    token _token = lexer.next_token();
 
-    std::vector<Token> tokenList;
+    std::vector<token> tokenList;
 
-    while (token.type != token_end)
+    while (_token.type != token_end)
     {
         // lexer.tokenList.push_back(token);
-        tokenList.push_back(token);
+        tokenList.push_back(_token);
         // std::cout << "Token: " <<"\"" << token.value << "\"" << ", Type: " << token.type << std::endl;
-        token = lexer.getNextToken();
+        _token = lexer.next_token();
     }
 
     Parser rarser = Parser();
-    std::map<std::string, Token> obj = rarser.parser(tokenList);
+    std::map<std::string, token> obj = rarser.parser(tokenList);
 
         // Lexer > Parser > 
 
@@ -39,17 +39,17 @@ int main()
         // std::cout << "Pnlo Pnlo:" << laop["Pnlo"] << std::endl;
         // std::cout << Nopt["hello"].value << std::endl;
 
-        std::cout << "Pnlo:" << obj["Pnlo"].value << std::endl;
-        std::cout << "version:" << obj["version"].value << std::endl;
-        std::cout << "Object1:" << obj["Object1"].value << std::endl;
-        std::cout << "Object2:" << obj["Object2"].value << std::endl;
-        std::cout << "Object3:" << obj["Object3"].value << std::endl;
-        std::cout << "Object4:" << obj["Object4"].value << std::endl;
-        std::cout << "main_obj_:" << obj["main_obj_"].value << std::endl;
-        std::cout << "Time:" << obj["Time"].value << std::endl;
-        std::cout << "OFF:" << obj["OFF"].value << std::endl;
-        std::cout << "ON:" << obj["ON"].value << std::endl;
-        
+    std::cout << "Pnlo:" << obj["Pnlo"].value << std::endl;
+    std::cout << "version:" << obj["version"].value << std::endl;
+    std::cout << "Object1:" << obj["Object1"].value << std::endl;
+    std::cout << "Object2:" << obj["Object2"].value << std::endl;
+    std::cout << "Object3:" << obj["Object3"].value << std::endl;
+    std::cout << "Object4:" << obj["Object4"].value << std::endl;
+    std::cout << "main_obj_:" << obj["main_obj_"].value << std::endl;
+    std::cout << "Time:" << obj["Time"].value << std::endl;
+    std::cout << "OFF:" << obj["OFF"].value << std::endl;
+    std::cout << "ON:" << obj["ON"].value << std::endl;
+    
 
 
 

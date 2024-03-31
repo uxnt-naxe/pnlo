@@ -7,9 +7,9 @@ Parser::Parser() {
 
 }
 
-std::map<std::string, Token> Parser::parser(std::vector<Token> tokenList) {
+std::map<std::string, token> Parser::parser(std::vector<token> tokenList) {
 
-    std::map<std::string, Token> varMap;
+    std::map<std::string, token> varMap;
 
     // for (int i = 0; i < tokenList.size(); i++) {
     int i = 0;

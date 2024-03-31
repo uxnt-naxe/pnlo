@@ -8,14 +8,14 @@
 grammar pnlo;
 
 pnlo
-    : ( kay | obj ) *
+    : ( key_value | obj ) *
     ;
 
 obj
-    : STRING '>' ( kay | obj ) * '~'
+    : STRING '>' ( key_value | obj ) * '~'
     | '>' '~'
     ;
-kay
+key_value
     : STRING ( '=' | ':' ) value ';' 
     ;
 
@@ -27,7 +27,7 @@ arr
 value
     : STRING
     | NUMBER
- //   | obj
+//    | obj
     | arr
     | 'true'
     | 'false'

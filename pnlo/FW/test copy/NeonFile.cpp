@@ -1,5 +1,7 @@
 #include "NeonFile.hpp"
-
+#include <sstream>
+#include <cstring>
+#include <fstream>
 
 // using namespace std;
 
