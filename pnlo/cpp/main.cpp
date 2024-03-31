@@ -18,26 +18,27 @@ int main()
     
     Lexer lexer = Lexer(input);
 
-    token _token = lexer.next_token();
+    // lexer.maxer = true;
 
-    std::vector<token> tokenList;
-
-    while (_token.type != token_end)
-    {
-        // lexer.tokenList.push_back(token);
-        tokenList.push_back(_token);
-        // std::cout << "Token: " <<"\"" << token.value << "\"" << ", Type: " << token.type << std::endl;
-        _token = lexer.next_token();
-    }
+    // tokenList
+    std::vector<token> TL = lexer.getTokens();
+    
+    //  token _token = lexer.next_token();
+    //  while (_token.type != token_end)
+    //  {
+    //      // lexer.tokenList.push_back(token);
+    //      tokenList.push_back(_token);
+    //      // std::cout << "Token: " <<"\"" << token.value << "\"" << ", Type: " << token.type << std::endl;
+    //      _token = lexer.next_token();
+    //  }
 
     Parser rarser = Parser();
-    std::map<std::string, token> obj = rarser.parser(tokenList);
+    std::map<std::string, token> obj = rarser.parser(TL);
 
-        // Lexer > Parser > 
-
-        // Pnlo laop = laop.parser(input);
-        // std::cout << "Pnlo Pnlo:" << laop["Pnlo"] << std::endl;
-        // std::cout << Nopt["hello"].value << std::endl;
+    // Lexer > Parser > 
+    // Pnlo laop = laop.parser(input);
+    // std::cout << "Pnlo Pnlo:" << laop["Pnlo"] << std::endl;
+    // std::cout << Nopt["hello"].value << std::endl;
 
     std::cout << "Pnlo:" << obj["Pnlo"].value << std::endl;
     std::cout << "version:" << obj["version"].value << std::endl;

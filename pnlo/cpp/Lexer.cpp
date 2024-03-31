@@ -160,6 +160,29 @@ std::string Lexer::scan_integer() {
 
    
 
+    // std::vector<token> tokenList;
+    std::vector<token> Lexer::getTokens() {
+
+        token _token_ = next_token();
+        // std::vector<token> tokenList;
+        while (_token_.type != token_end)
+        {
+            // lexer.tokenList.push_back(token);
+            tokens.push_back(_token_);
+            if(maxer) {
+                std::cout << "Type |   " << _token_.type << "\t| Token | " << _token_.value << std::endl;
+            }
+            _token_ = next_token();
+        }
+        return tokens;
+    }
+    
+
+
+
+
+
+
 
     token Lexer::next_token() {
         while (next_ch() != '\0') {

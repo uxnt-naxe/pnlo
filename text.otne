@@ -17,16 +17,17 @@ Object2 = "obj-2";
 "Object4" = "obj-4";
 
 main_obj_ = "Main Obj";
-Time = 111;
+Time = 111.0;
 OFF = false;
 ON = true;
 
 
+obj >
+~
 
-
-// obj >
-//    yes = true;
-// ~
+obj >
+   yes = true;
+~
 
 
 

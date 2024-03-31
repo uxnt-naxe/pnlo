@@ -20,6 +20,8 @@ class Lexer
         ~Lexer(){}
         
         std::vector<token> tokens;
+        bool maxer = false;
+        std::vector<token> getTokens();
         
         char next_ch();
         void next();
