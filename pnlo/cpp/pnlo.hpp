@@ -14,6 +14,8 @@ public:
         pnlo_int,       // integer value
         pnlo_double,    // double value
         pnlo_string,    // string value
+        // -----------------------------
+        pnlo_key_value,
         pnlo_array,     // array value
         pnlo_object     // object value
     };

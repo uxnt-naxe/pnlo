@@ -18,8 +18,8 @@ enum token_type {
     v_false,         // false 假
     v_true,          // true  真
 
-    v_obj,          //
-    v_key_value,    // 
+    // v_obj,          //
+    // v_key_value,    // 
     
     // symbol 符号
     // ------------------------------
