@@ -1,3 +1,6 @@
+#ifndef NeonFile_h
+#define NeonFile_h
+
 #include <string>
 #include <sstream>
 #include <cstring>
@@ -5,8 +8,7 @@
 
 // Neon ReadFile
 // string NeonFile(string path);
-#ifndef NeonFile_h
-#define NeonFile_h
+
 
 namespace Neon
 {

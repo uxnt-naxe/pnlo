@@ -1,3 +1,6 @@
+#ifndef Lexer_h
+#define Lexer_h
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -6,8 +9,7 @@
 
 #include "token/token.hpp"
 
-#ifndef Lexer_h
-#define Lexer_h
+
 
 class Lexer
 {

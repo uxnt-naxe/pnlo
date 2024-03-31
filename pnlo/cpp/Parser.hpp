@@ -1,3 +1,6 @@
+#ifndef Parser_h
+#define Parser_h
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -16,17 +19,14 @@
 
 */
 
-#ifndef Parser_h
-#define Parser_h
-
 class Parser
 {
-    
     public:
+    Parser();
         // std::vector<Token> tokenList
         // std::vector<Token> tokenList;
 
-        Parser();
+        
         std::map<std::string, token> parser(std::vector<token> tokenList);
         // ~Parser(){}
 };
@@ -35,3 +35,6 @@ class Parser
 // std::map<std::string, Token> paser(std::vector<Token> tokenList)
 
 #endif
+
+
+

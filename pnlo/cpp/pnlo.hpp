@@ -1,8 +1,8 @@
-#include "Lexer.hpp"
-#include "Parser.hpp"
-
 #ifndef Pnlo_h
 #define Pnlo_h
+
+#include "Lexer.hpp"
+#include "Parser.hpp"
 
 class Pnlo
 {
