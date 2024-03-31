@@ -52,16 +52,26 @@ int main()
 
     Parser rarser = Parser();
 
-    
     std::map<std::string, token> obj = rarser.parser(TL);
-    pKeyValue edcsa = pKeyValue();
-
+    pKeyValue test_kv = pKeyValue();
 
     for(auto map : obj) {
-        edcsa[map.first].String = obj[map.first].value;
+        test_kv[map.first].String = obj[map.first].value;
+        // std::cout << map.first << "\t\t | " << obj[map.first].value << std::endl;
+    }
+    // std::cout << std::endl;
+    for(auto map : obj) {
+        test_kv[map.first].String = obj[map.first].value;
+        // std::cout << map.first << " : " << obj[map.first].value << std::endl;
+    }
+    // std::cout << std::endl;
+    for(auto map : test_kv) {
+        test_kv[map.first].String = obj[map.first].value;
+        // std::cout << map.first << " : " << test_kv[map.first].String << std::endl;
     }
 
-    std::cout << "Time:" << edcsa["ON"].String << std::endl;
+
+    
     
 
 
