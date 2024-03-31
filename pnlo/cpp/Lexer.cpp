@@ -42,7 +42,6 @@ void Lexer::next_skipWhitespace() {
     }
 }
 
-// isLetter
 std::string Lexer::scan_identifier() {
     std::string str = "";
     while (
@@ -84,7 +83,6 @@ std::string Lexer::scan_string() {
 //     return str_;
 // }   
 
-// get_value_integer
 std::string Lexer::scan_integer() {
     std::string str = "";
     while (isDigit(next_ch())) {
@@ -99,7 +97,7 @@ std::string Lexer::scan_integer() {
 
     // get_value_number
     std::string Lexer::scan_number() {
-        std::string result = "";
+        std::string str = "";
         bool hasDecimal = false;
         bool isNegative = false;
         bool hasExponent = false;
@@ -107,7 +105,7 @@ std::string Lexer::scan_integer() {
 
         if (next_ch() == '-') {
             isNegative = true;
-            result += "-";
+            str += "-";
             next();
         }
         else if (next_ch() == '+') {
@@ -140,16 +138,24 @@ std::string Lexer::scan_integer() {
             else if (!isDigit(next_ch())) {
                 break;
             }
-            result += next_ch();
+            str += next_ch();
             next();
         }
         
         // 检查结果是否是一个有效数字
-        if (result.empty() || (hasDecimal && result.size() == 1) || (hasExponent && (result.size() == 1 || hasExponentSign || !isDigit(result.back())))) {
+        if (
+            str.empty() || 
+            (hasDecimal && str.size() == 1) || 
+            (
+                hasExponent && (str.size() == 1 || 
+                hasExponentSign || 
+                !isDigit(str.back()))
+                )
+            ){
             std::cerr << "Invalid number!" << std::endl;
             exit(1);
         }
-        return result;
+        return str;
     }
 
    

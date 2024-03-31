@@ -15,10 +15,6 @@ class Lexer
         std::string m_str;
         int m_idx;
     public:
-        // token_type
-        // std::vector<Token> tokenList;
-        // Tokens
-
         Lexer(const std::string &str) : m_str(str), m_idx(0) {}
         ~Lexer(){}
         
@@ -33,10 +29,8 @@ class Lexer
         std::string scan_float();
         std::string scan_bool();
         std::string scan_number();
-
         // std::string scan_string(std::string str);
         token next_token();
-
 };
 
 #endif
