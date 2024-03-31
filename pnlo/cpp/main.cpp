@@ -34,8 +34,7 @@ int main()
     std::cout << User["user"]["password"].keyValue[""].String << std::endl;
 
 
-
-
+    
     Neon::File ojb = Neon::File("text.otne");
     std::string input = ojb.Read();
     
