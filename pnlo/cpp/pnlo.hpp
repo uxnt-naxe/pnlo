@@ -17,7 +17,7 @@ struct pKeyValue:std::map<std::string, pValue> {
     // pKeyValue(const std::string& k, const pValue& v) : key(k), value(v) {}
 };
 
-struct pObject {
+struct pObject : std::map<std::string, pObject>{
     pKeyValue keyValue;
     std::map<std::string, pObject> Object;
 };

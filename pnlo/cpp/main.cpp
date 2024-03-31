@@ -22,11 +22,16 @@ int main()
     // pObject Hello = pObject();
 
     pKeyValue qwe = pKeyValue();
-
     qwe["s"].String = "qwe";
 
-  
+    
+    pObject User = pObject();
 
+    User["user"]["mail"].keyValue[""].String = "beanflame@qq.com";
+    User["user"]["password"].keyValue[""].String = "FFFFF";    
+
+    std::cout << User["user"]["mail"].keyValue[""].String     << std::endl;
+    std::cout << User["user"]["password"].keyValue[""].String << std::endl;
 
 
 
