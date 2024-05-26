@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="pnlo-logo.svg">
-  <img src="pnlo-logo.svg" alt="pnlo-logo" height="128">
+  <img src="resources/pnlo-logo.svg" alt="pnlo-logo" height="128">
 </picture>
 
 # Pnlo 0.0.1 (Purple Neon Light Object)
